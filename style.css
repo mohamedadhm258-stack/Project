@@ -18,6 +18,29 @@ html {
   --secondColor: rgb(255, 133, 187);
   --hoverColor: rgb(255, 206, 227);
   --whiteColor: white;
+  --section-title:50px;
+  --section-title-weight:700;
+}
+
+/* scrollbar style */
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: lightgray;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondColor);
+  border-radius: 3px;
+  border: 2px solid var(--secondColor);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hoverColor);
 }
 
 /* nav */
@@ -53,14 +76,17 @@ nav ul li a {
   text-decoration: none;
   color: var(--whiteColor) !important;
   font-size: 25px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 nav ul li a:hover {
-  background-color: white;
-  color: black !important;
-  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white !important;
+  border-radius: 8px;
+  padding: 8px 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+
 
 @media screen and (max-width:991px) {
   nav ul {
@@ -69,6 +95,14 @@ nav ul li a:hover {
     align-items: flex-start;
   }
 
+  nav ul li a:hover {
+    padding: 10px !important;
+  }
+
+  nav .logo a {
+    font-size: 22px;
+    font-weight: 600;
+  }
 }
 
 @media screen and (min-width:992px) and (max-width:1629px) {
@@ -82,7 +116,6 @@ nav ul li a:hover {
 
   nav ul li a {
     font-size: 23px;
-
   }
 }
 
@@ -96,10 +129,13 @@ nav ul li a:hover {
   align-items: center;
 }
 
+.header .text {
+  margin-top: 80px;
+}
+
 .header .text h4 {
   margin-bottom: 5%;
   color: var(--whiteColor);
-
 }
 
 .header .text p {
@@ -115,17 +151,19 @@ nav ul li a:hover {
   text-decoration: none;
   background-color: var(--secondColor);
   color: var(--mainColor);
-  padding: 15px 20px;
-  border-radius: 20px;
-  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
   font-size: 30px;
   display: inline-block;
-  transition: all 2s;
-
+  transition: all 0.5s;
 }
 
 .header .text #cv:hover {
-  scale: 1.2;
+  scale: 1.06;
   background-color: var(--whiteColor);
   color: var(--mainColor);
 }
@@ -137,21 +175,21 @@ nav ul li a:hover {
 .header .text .icons a i {
   font-size: 40px;
   color: var(--whiteColor);
-  transition: all 2s;
+  transition: all 0.6s;
 }
 
 .header .text .icons a i:hover {
   color: var(--secondColor);
-  scale: 1.1;
+  scale: 1.05;
 }
 
 .header .imgg {
   width: 300px;
   height: 400px;
-  box-shadow: 2px 2px 15px white;
+  box-shadow: 2px 2px 15px rgb(100, 100, 100);
   border-radius: 20px;
-  transition: all 2s;
-
+  transition: all 0.6s;
+  margin: 0px 20px;
 }
 
 .header .imgg img {
@@ -162,7 +200,7 @@ nav ul li a:hover {
 }
 
 .header .imgg:hover {
-  scale: 1.1;
+  scale: 1.05;
 }
 
 @media screen and (max-width:924px) {
@@ -181,21 +219,36 @@ nav ul li a:hover {
 
 @media screen and (max-width:530px) {
 
+  .header .text h4 {
+    font-size: 17px;
+    font-weight: 500;
+  }
 
   .header .text p {
-    font-size: 25px;
-
+    font-size: 19px;
+    font-weight: 500;
   }
 
   .header .text #cv {
     padding: 10px 15px;
     font-size: 20px;
-
   }
 
   .header .imgg {
     width: 200px;
-    height: 300px;
+    height: auto;
+  }
+
+  .header .text .icons a i {
+    font-size: 23px;
+  }
+
+  .header .text #cv {
+    font-size: 22px;
+    padding:5px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 22px;
   }
 }
 
@@ -220,26 +273,26 @@ nav ul li a:hover {
 }
 
 .About-me-titel {
-  color: #12e0ff;
-  font-size: 45px;
-  font-weight: 800;
+  color: var(--mainColor);
+  font-size:var(--section-title);
+  font-weight: var(--section-title-weight);
   text-align: center;
   margin: 0;
 }
 
 .About-me-para {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #ececec;
+  color: black;
   text-align: center;
   padding: 40px 30px;
-  border-radius: 40px 10px;
-  font-size: 18px;
+  border-radius:10px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1.8;
   width: 80%;
   max-width: 700px;
   margin: 0 auto;
-  box-shadow: 0px 15px 25px rgb(117, 117, 117);
+  box-shadow: 0px 15px 10px rgb(117, 117, 117);
 }
 
 @media (max-width: 768px) {
@@ -272,7 +325,8 @@ nav ul li a:hover {
 .skills #skills-head {
   text-align: center;
   color: var(--secondColor);
-  font-size: 1em;
+  font-size: var(--section-title);
+  font-weight: var(--section-title-weight);
   margin-bottom: 4%;
 }
 
@@ -329,7 +383,8 @@ nav ul li a:hover {
 
 .projects-contianter h2 {
   text-align: center;
-  font-size: 70px;
+  font-size: var(--section-title);
+  font-weight: var(--section-title-weight);
   color: var(--mainColor);
   margin-bottom: 5%;
 }
@@ -344,34 +399,48 @@ nav ul li a:hover {
 
 .projects-contianter .projects .project {
   width: 400px;
-  height: 500px;
-  border-radius: 20px 50px;
+  min-height: 450px;
+  overflow: hidden;
+  border-radius: 20px 20px;
   background-color: var(--secondColor);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.projects-contianter .projects .project:hover {
+  transform: translateY(-4px);
 }
 
 .projects-contianter .projects .project img {
   width: 100%;
-  border-radius: 20px 50px 0 0;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
 }
 
 .projects-contianter .projects .project .text {
   padding: 20px;
-}
-
-.projects-contianter .projects .project .text p {
-  margin: 20px 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .projects-contianter .projects .project .text a {
   text-decoration: none;
   background-color: var(--mainColor);
   color: var(--whiteColor);
-  padding: 15px 20px;
-  font-size: 23px;
-  font-weight: bold;
-  border-radius: 20px;
-  display: inline-block;
-  margin-top: 20px;
+  padding: 10px 15px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 12px;
+  transition: background-color 0.5s ease-in-out , color 0.5s ease-in-out;
+}
+
+.projects-contianter .projects .project .text a:hover {
+  background-color: rgb(156, 219, 240);
+  color: var(--mainColor);
 }
 
 
@@ -395,8 +464,8 @@ nav ul li a:hover {
 
 
 .contact {
-  padding: 80px 20px;
-  background: #f7f7f7;
+  padding-top: 20px;
+  background: white;
 }
 
 .contact-me-title {
@@ -405,22 +474,27 @@ nav ul li a:hover {
 }
 
 .contact-me-title h2 {
-  font-size: 40px;
-  font-weight: bold;
-  color: rgb(3, 47, 47);
+  font-size: var(--section-title);
+  font-weight: var(--section-title-weight);
+  color: var(--mainColor);
   position: relative;
+}
+
+.big-container {
+  width: 100%;
+  background-color: #555;
+  padding: 40px;
 }
 
 
 .contact-me-contianer {
   max-width: 600px;
   margin: auto;
-  background: cyan;
+  background: rgb(229, 229, 229);
   padding: 30px;
   padding: 60px;
-  border-radius: 40px 10px;
-  box-shadow: 0 10px 30px rgb(207, 207, 207);
-  border: 8px solid white;
+  border-radius: 15px;
+  border: 2px solid rgb(186, 186, 186);
 }
 
 .contact-me-form {
@@ -438,7 +512,7 @@ nav ul li a:hover {
 .contact-me-form textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid #ddd;
+  border: 1px solid #fdfdfd;
   border-radius: 8px;
   font-size: 14px;
   outline: none;
@@ -454,7 +528,6 @@ nav ul li a:hover {
 
 .contact-me-form textarea {
   min-height: 140px;
-  resize: vertical;
   resize: none;
 }
 
@@ -471,13 +544,26 @@ nav ul li a:hover {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease-in, color 0.3s ease-in;
+  transition: background 0.3s ease-in, color 0.3s ease-in, transform ease-in-out 0.6s;
   text-wrap: wrap;
 }
 
 .contact-me-form button:hover {
-  background: #444;
-  color: white;
+  background: #c4c4c4;
+  transform: translate(2px, 1px);
+}
+
+
+@media screen and (max-width: 700px) {
+  .contact-me-contianer {
+    width: 95%; 
+    max-width: none; 
+    padding: 30px 20px; 
+  }
+
+  .contact-me-form button {
+    width: 70%;
+  }
 }
 
 
@@ -485,7 +571,8 @@ nav ul li a:hover {
 
 .footer {
   display: flex;
-  padding: 8px 20px;
+  padding: 0 20px;
+  min-height: 80px;
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
@@ -493,11 +580,18 @@ nav ul li a:hover {
   background-color: rgb(212, 212, 212);
 }
 
+.footer * {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
 @media screen and (max-width:468px) {
   .footer {
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    min-height: auto;
   }
 }
 
@@ -506,17 +600,21 @@ nav ul li a:hover {
   bottom: 20px;
   right: 20px;
   text-decoration: none;
-  background-color: #333;
-  color: white;
+  background-color: #e1e1e1;
+  color:red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px 15px;
   border-radius: 50%;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: 900;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .up:hover {
-  background-color: #555;
-  color: white;
+  background-color: #ffffff;
+  color: blue;
   text-decoration: none;
 }
