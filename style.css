@@ -185,7 +185,7 @@ nav ul li a:hover {
 
 .header .imgg {
   width: 300px;
-  height: 400px;
+  height:auto;
   box-shadow: 2px 2px 15px rgb(100, 100, 100);
   border-radius: 20px;
   transition: all 0.6s;
@@ -209,7 +209,6 @@ nav ul li a:hover {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-
   }
 
   .header .text {
@@ -218,6 +217,13 @@ nav ul li a:hover {
 }
 
 @media screen and (max-width:530px) {
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 
   .header .text h4 {
     font-size: 17px;
@@ -571,8 +577,8 @@ nav ul li a:hover {
 
 .footer {
   display: flex;
-  padding: 0 20px;
-  min-height: 80px;
+  padding: 0 15px;
+  min-height: 100px;
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
@@ -592,6 +598,7 @@ nav ul li a:hover {
     gap: 20px;
     align-items: center;
     min-height: auto;
+    padding: 20px;
   }
 }
 
